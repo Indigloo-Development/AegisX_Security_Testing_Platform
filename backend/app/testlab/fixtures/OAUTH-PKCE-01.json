@@ -1,0 +1,17 @@
+{
+  "fixture_id": "OAUTH-PKCE-01",
+  "title": "OAuth PKCE missing fixture 1",
+  "category": "Auth/OAuth",
+  "protocol": "web",
+  "expected_rules": [
+    "AUTH-OAUTH-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "oauth_pkce_missing": true
+    },
+    "url": "https://lab.local/oauth-pkce/1"
+  },
+  "negative": false
+}

@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-WEB-INJ-002",
+  "title": "Coverage fixture for WEB-INJ-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-INJ-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-inj-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "location.search -> element.innerHTML",
+    "metadata": {
+      "dom_xss_sink_observed": true
+    },
+    "protocol": "web"
+  },
+  "negative": false
+}

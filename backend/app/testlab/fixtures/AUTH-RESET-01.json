@@ -1,0 +1,17 @@
+{
+  "fixture_id": "AUTH-RESET-01",
+  "title": "Reusable reset token fixture 1",
+  "category": "Auth/Reset",
+  "protocol": "web",
+  "expected_rules": [
+    "AUTH-RESET-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "password_reset_reusable": true
+    },
+    "url": "https://lab.local/auth-reset/1"
+  },
+  "negative": false
+}

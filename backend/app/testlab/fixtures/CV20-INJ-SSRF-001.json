@@ -1,0 +1,38 @@
+{
+  "fixture_id": "CV20-INJ-SSRF-001",
+  "title": "Coverage fixture for INJ-SSRF-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "INJ-SSRF-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/inj-ssrf-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "content-type": "application/xml"
+    },
+    "body": "SQL syntax error; LDAP error; XPath error; Jinja2 template syntax error",
+    "metadata": {
+      "controlled_input_variation": true,
+      "differential_db_behavior": true,
+      "server_side_fetch_candidate": true,
+      "oast_token": "coverage-token",
+      "oast_callback_observed": true,
+      "controlled_template_probe": true,
+      "external_entity_processing": true,
+      "ldap_error_observed": true,
+      "xpath_error_observed": true,
+      "header_injection_indicator": true
+    },
+    "protocol": "web",
+    "parameters": [
+      {
+        "name": "url"
+      }
+    ]
+  },
+  "negative": false
+}

@@ -1,0 +1,17 @@
+{
+  "fixture_id": "SCA-KEV-03",
+  "title": "Dependency KEV fixture 3",
+  "category": "SCA/Threat",
+  "protocol": "sca",
+  "expected_rules": [
+    "SCA-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "kev": true
+    },
+    "url": "https://lab.local/sca-kev/3"
+  },
+  "negative": false
+}

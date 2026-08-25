@@ -1,0 +1,24 @@
+{
+  "fixture_id": "CV20-API-GQL-004",
+  "title": "Coverage fixture for API-GQL-004",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-GQL-004"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-gql-004",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "introspection_public": true,
+      "query_depth_limit": null,
+      "alias_batching_limit": null
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

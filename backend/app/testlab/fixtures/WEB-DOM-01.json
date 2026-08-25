@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-DOM-01",
+  "title": "DOM source sink fixture 1",
+  "category": "Web/XSS",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-XSS-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "dom_source_to_sink": true
+    },
+    "url": "https://lab.local/web-dom/1"
+  },
+  "negative": false
+}

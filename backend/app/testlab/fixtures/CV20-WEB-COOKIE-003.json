@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-WEB-COOKIE-003",
+  "title": "Coverage fixture for WEB-COOKIE-003",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-COOKIE-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-cookie-003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "set-cookie": "sid=abc"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

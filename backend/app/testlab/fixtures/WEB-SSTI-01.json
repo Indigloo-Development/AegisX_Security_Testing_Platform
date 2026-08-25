@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-SSTI-01",
+  "title": "Template error fixture 1",
+  "category": "Web/Injection",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-SSTI-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "template_error_indicator": true
+    },
+    "url": "https://lab.local/web-ssti/1"
+  },
+  "negative": false
+}

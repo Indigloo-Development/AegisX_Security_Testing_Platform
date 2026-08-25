@@ -1,0 +1,14 @@
+[Unit]
+Description=AegisX Application
+After=network.target
+
+[Service]
+Type=forking
+User=aegisx
+WorkingDirectory=/opt/aegisx
+ExecStart=/opt/aegisx/scripts/aegisx start
+ExecStop=/opt/aegisx/scripts/aegisx stop
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

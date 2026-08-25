@@ -1,0 +1,25 @@
+{
+  "fixture_id": "CV20-API-SOAP-003",
+  "title": "Coverage fixture for API-SOAP-003",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-SOAP-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-soap-003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "external_entities_enabled": true,
+      "entity_expansion_limit": null,
+      "plaintext_transport": true,
+      "reflection_public": true
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

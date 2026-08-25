@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-HDR-006",
+  "title": "Coverage fixture for WEB-HDR-006",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-HDR-006"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-hdr-006",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-SEC-002",
+  "title": "Coverage fixture for WEB-SEC-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-SEC-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "<script src=\"http://lab.local/a.js\"></script>",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

@@ -1,0 +1,16 @@
+{
+  "fixture_id": "WEB-CSP-UNSAFE-03",
+  "title": "CSP unsafe inline fixture 3",
+  "category": "Web/CSP",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CSP-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "headers": {},
+    "url": "https://lab.local/web-csp-unsafe/3",
+    "metadata": {}
+  },
+  "negative": false
+}

@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-TRANS-001",
+  "title": "Coverage fixture for WEB-TRANS-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-TRANS-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "http://lab.local",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

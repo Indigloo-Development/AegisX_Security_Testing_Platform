@@ -1,0 +1,17 @@
+{
+  "fixture_id": "MCP-01",
+  "title": "MCP transport issue fixture 1",
+  "category": "AI/MCP",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-MCP-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "mcp_transport": true,
+      "mcp_server_untrusted_transport": true
+    }
+  },
+  "negative": false
+}

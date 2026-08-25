@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-HEAD-001",
+  "title": "Coverage fixture for WEB-HEAD-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-HEAD-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-head-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

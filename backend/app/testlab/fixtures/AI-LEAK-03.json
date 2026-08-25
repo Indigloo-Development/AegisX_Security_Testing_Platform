@@ -1,0 +1,17 @@
+{
+  "fixture_id": "AI-LEAK-03",
+  "title": "LLM disclosure fixture 3",
+  "category": "AI/LLM",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-LLM-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "llm_disclosure": true,
+      "system_prompt_disclosed": true
+    }
+  },
+  "negative": false
+}

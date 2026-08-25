@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-AUTH-001",
+  "title": "Coverage fixture for API-AUTH-001",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-AUTH-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-auth-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-AUTH-001": true
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

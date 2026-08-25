@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-CSRF-02",
+  "title": "State change lacks CSRF control fixture 2",
+  "category": "Web/CSRF",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CSRF-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "state_change_without_csrf_control": true
+    },
+    "url": "https://lab.local/web-csrf/2"
+  },
+  "negative": false
+}

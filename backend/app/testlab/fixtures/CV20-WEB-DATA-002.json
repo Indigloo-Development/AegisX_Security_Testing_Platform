@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-DATA-002",
+  "title": "Coverage fixture for WEB-DATA-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-DATA-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-data-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "internal_hostname=app01 debug=true traceback",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

@@ -1,0 +1,17 @@
+{
+  "fixture_id": "COOKIE-02",
+  "title": "Insecure cookie fixture 2",
+  "category": "Web/Cookie",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-COOKIE-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "headers": {
+      "set-cookie": "session=abc"
+    },
+    "metadata": {}
+  },
+  "negative": false
+}

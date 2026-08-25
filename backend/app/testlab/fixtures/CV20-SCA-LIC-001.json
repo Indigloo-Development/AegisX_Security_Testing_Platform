@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-SCA-LIC-001",
+  "title": "Coverage fixture for SCA-LIC-001",
+  "category": "coverage-v20",
+  "protocol": "sca",
+  "expected_rules": [
+    "SCA-LIC-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/sca-lic-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:SCA-LIC-001": true
+    },
+    "protocol": "sca"
+  },
+  "negative": false
+}

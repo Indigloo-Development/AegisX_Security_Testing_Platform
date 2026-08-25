@@ -1,0 +1,12 @@
+{
+  "title": "AegisX Security Operations",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {"type": "stat", "title": "Requests", "targets": [{"expr": "sum(aegisx_http_requests_total)"}]},
+    {"type": "timeseries", "title": "HTTP Latency", "targets": [{"expr": "histogram_quantile(0.95, sum(rate(aegisx_http_request_duration_seconds_bucket[5m])) by (le))"}]},
+    {"type": "timeseries", "title": "Queue Depth", "targets": [{"expr": "sum(aegisx_queue_depth)"}]},
+    {"type": "timeseries", "title": "Findings", "targets": [{"expr": "sum(rate(aegisx_findings_created_total[5m])) by (severity)"}]},
+    {"type": "timeseries", "title": "Worker Jobs", "targets": [{"expr": "sum(rate(aegisx_worker_jobs_total[5m])) by (status)"}]}
+  ]
+}

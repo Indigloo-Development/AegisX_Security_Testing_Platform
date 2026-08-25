@@ -1,0 +1,28 @@
+{
+  "fixture_id": "CV20-SCA-007",
+  "title": "Coverage fixture for SCA-007",
+  "category": "coverage-v20",
+  "protocol": "sca",
+  "expected_rules": [
+    "SCA-007"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/sca-007",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "cve_id": "CVE-TEST-0001",
+      "kev": true,
+      "epss": 0.9,
+      "reachable": true,
+      "license_risk": true,
+      "name_similarity": true,
+      "sbom_drift": true
+    },
+    "protocol": "sca"
+  },
+  "negative": false
+}

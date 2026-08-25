@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-WEB-CACHE-001",
+  "title": "Coverage fixture for WEB-CACHE-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CACHE-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-cache-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

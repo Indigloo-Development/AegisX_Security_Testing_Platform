@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-REFLECT-04",
+  "title": "Reflected input fixture 4",
+  "category": "Web/XSS",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-XSS-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "xss_reflection_context": true
+    },
+    "url": "https://lab.local/web-reflect/4"
+  },
+  "negative": false
+}

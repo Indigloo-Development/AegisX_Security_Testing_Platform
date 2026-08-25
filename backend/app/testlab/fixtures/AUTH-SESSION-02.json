@@ -1,0 +1,17 @@
+{
+  "fixture_id": "AUTH-SESSION-02",
+  "title": "Session fixation fixture 2",
+  "category": "Auth/Session",
+  "protocol": "web",
+  "expected_rules": [
+    "AUTH-SESSION-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "session_fixation_indicator": true
+    },
+    "url": "https://lab.local/auth-session/2"
+  },
+  "negative": false
+}

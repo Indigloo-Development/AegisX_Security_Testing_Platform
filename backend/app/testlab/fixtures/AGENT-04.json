@@ -1,0 +1,18 @@
+{
+  "fixture_id": "AGENT-04",
+  "title": "Agent boundary fixture 4",
+  "category": "AI/Agent",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-AGENT-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "agent_boundary": true,
+      "tool_privilege_excessive": true
+    },
+    "url": "https://lab.local/agent/4"
+  },
+  "negative": false
+}

@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-GRPC-001",
+  "title": "Coverage fixture for API-GRPC-001",
+  "category": "coverage-v20",
+  "protocol": "grpc",
+  "expected_rules": [
+    "API-GRPC-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-grpc-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-GRPC-001": true
+    },
+    "protocol": "grpc"
+  },
+  "negative": false
+}

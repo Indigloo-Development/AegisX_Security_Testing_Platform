@@ -1,0 +1,18 @@
+{
+  "fixture_id": "RAG-INJ-01",
+  "title": "RAG indirect injection fixture 1",
+  "category": "AI/RAG",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-RAG-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "rag_injection": true,
+      "document_injection_observed": true
+    },
+    "url": "https://lab.local/rag-inj/1"
+  },
+  "negative": false
+}

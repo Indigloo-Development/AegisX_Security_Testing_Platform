@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-INJ-004",
+  "title": "Coverage fixture for WEB-INJ-004",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-INJ-004"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-inj-004",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "command not found",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

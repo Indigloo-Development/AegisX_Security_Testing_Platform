@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BACKEND="$ROOT/backend"
+FRONTEND="$ROOT/frontend"
+# Keep the Python virtual environment off VirtualBox/VMware shared folders (e.g. /media/sf_*).
+# Override with AEGISX_VENV_DIR when desired.
+if [[ -n "${AEGISX_VENV_DIR:-}" ]]; then
+  VENV_DIR="$AEGISX_VENV_DIR"
+else
+  case "$BACKEND" in
+    /media/*|/mnt/*|/run/user/*/gvfs/*) VENV_DIR="${HOME}/.cache/aegisx/venv" ;;
+    *) VENV_DIR="$BACKEND/.venv" ;;
+  esac
+fi
+RUNTIME="$ROOT/.aegisx"
+LOGDIR="$RUNTIME/logs"
+PIDDIR="$RUNTIME/pids"
+mkdir -p "$LOGDIR" "$PIDDIR"
+
+load_env() {
+  if [[ -f "$ROOT/.env" ]]; then
+    set -a; source "$ROOT/.env"; set +a
+  fi
+}
+
+ensure_backend() {
+  if [[ ! -x "$VENV_DIR/bin/python" ]]; then
+    echo "Creating Python virtual environment at $VENV_DIR..."
+    mkdir -p "$(dirname "$VENV_DIR")"
+    # --copies avoids lib64 symlink creation failures on VirtualBox/VMware shared folders.
+    python3 -m venv --copies "$VENV_DIR"
+    "$VENV_DIR/bin/python" -m pip install --upgrade pip >/dev/null
+    "$VENV_DIR/bin/pip" install -r "$BACKEND/requirements.txt"
+    "$VENV_DIR/bin/python" -m playwright install chromium
+  fi
+}
+
+ensure_frontend() {
+  local mode="${AEGISX_UI_MODE:-auto}"
+  if [[ "$mode" == "standalone" ]]; then
+    echo "Standalone UI mode: skipping Node/Next.js dependency installation."
+    return 0
+  fi
+  if [[ -x "$FRONTEND/node_modules/.bin/next" ]]; then return 0; fi
+  if [[ "${AEGISX_INSTALL_FRONTEND:-0}" != "1" ]]; then
+    echo "Next.js dependencies are not installed; full Standalone Console will be used. Set AEGISX_INSTALL_FRONTEND=1 to enable the Next.js UI."
+    return 0
+  fi
+  echo "Installing frontend dependencies..."
+  if ! (cd "$FRONTEND" && npm install --no-audit --no-fund); then
+    echo "Frontend dependency installation failed; standalone UI will be used." | tee -a "$LOGDIR/frontend.log"
+    return 0
+  fi
+}
+
+backend_migrate() {
+  if [[ -n "${DATABASE_URL:-}" && "${DATABASE_URL}" != sqlite:* ]]; then
+    (cd "$BACKEND" && "$VENV_DIR/bin/alembic" upgrade head)
+  else
+    echo "SQLite mode: using application schema bootstrap."
+  fi
+}
+
+start_backend() {
+  load_env
+  ensure_backend
+  backend_migrate
+  if [[ -f "$PIDDIR/backend.pid" ]] && kill -0 "$(cat "$PIDDIR/backend.pid")" 2>/dev/null; then
+    echo "Backend already running (PID $(cat "$PIDDIR/backend.pid"))."; return
+  fi
+  (cd "$BACKEND" && exec "$VENV_DIR/bin/uvicorn" app.main:app --host "${AEGISX_HOST:-127.0.0.1}" --port "${AEGISX_PORT:-8000}") >"$LOGDIR/backend.log" 2>&1 &
+  echo $! > "$PIDDIR/backend.pid"
+}
+
+start_worker() {
+  load_env
+  ensure_backend
+  if [[ "${AEGISX_QUEUE_BACKEND:-memory}" == "memory" && "${AEGISX_START_WORKER:-0}" != "1" ]]; then
+    echo "Standalone mode: local in-process queue selected; external worker not required."
+    return
+  fi
+  if [[ -f "$PIDDIR/worker.pid" ]] && kill -0 "$(cat "$PIDDIR/worker.pid")" 2>/dev/null; then
+    echo "Worker already running (PID $(cat "$PIDDIR/worker.pid"))."; return
+  fi
+  (cd "$BACKEND" && exec "$VENV_DIR/bin/python" -m app.worker) >"$LOGDIR/worker.log" 2>&1 &
+  echo $! > "$PIDDIR/worker.pid"
+}
+
+start_frontend() {
+  load_env
+  ensure_frontend
+  if [[ -f "$PIDDIR/frontend.pid" ]] && kill -0 "$(cat "$PIDDIR/frontend.pid")" 2>/dev/null; then
+    echo "Frontend already running (PID $(cat "$PIDDIR/frontend.pid"))."; return
+  fi
+  # Remove stale development artifacts that can cause Next dev runtime 500s after an upgrade.
+  rm -rf "$FRONTEND/.next"
+  local ui_mode="${AEGISX_UI_MODE:-auto}"
+  if [[ "$ui_mode" == "standalone" || ! -x "$FRONTEND/node_modules/.bin/next" ]]; then
+    echo "Next.js dependency is unavailable; starting full Standalone Console." | tee -a "$LOGDIR/frontend.log"
+    (cd "$FRONTEND" && exec python3 launcher.py dev -p 3000) >"$LOGDIR/frontend.log" 2>&1 &
+    echo $! > "$PIDDIR/frontend.pid"
+    return
+  fi
+  (cd "$FRONTEND" && exec python3 launcher.py dev -p 3000) >"$LOGDIR/frontend.log" 2>&1 &
+  echo $! > "$PIDDIR/frontend.pid"
+  # Give Next a moment to compile, then verify the root page. If it still returns an error,
+  # fall back to the dependency-free recovery UI instead of exposing a generic 500 page.
+  local host="${AEGISX_FRONTEND_HOST:-127.0.0.1}"
+  for _ in $(seq 1 20); do
+    if command -v curl >/dev/null 2>&1 && curl -fsS "http://${host}:3000/" >/dev/null 2>&1; then return; fi
+    sleep 0.5
+  done
+  echo "Next.js frontend did not become healthy; starting dependency-free recovery UI." >>"$LOGDIR/frontend.log"
+  stop_one frontend
+  (cd "$FRONTEND/fallback" && exec python3 -m http.server 3000 --bind "${host}") >"$LOGDIR/frontend.log" 2>&1 &
+  echo $! > "$PIDDIR/frontend.pid"
+}
+
+stop_one() {
+  local name="$1"
+  local file="$PIDDIR/$name.pid"
+  if [[ -f "$file" ]]; then
+    local pid; pid=$(cat "$file") || true
+    if kill -0 "$pid" 2>/dev/null; then kill "$pid" || true; fi
+    rm -f "$file"
+  fi
+}
+
+case "${1:-}" in
+  install)
+    load_env
+    ensure_backend
+    ensure_frontend
+    echo "AegisX installation complete."
+    ;;
+  start)
+    start_backend
+    start_worker
+    start_frontend
+    echo "AegisX started."
+    echo "UI:  http://${AEGISX_FRONTEND_HOST:-127.0.0.1}:3000"
+    echo "API: http://${AEGISX_HOST:-127.0.0.1}:${AEGISX_PORT:-8000}/docs"
+    ;;
+  stop)
+    stop_one frontend
+    stop_one worker
+    stop_one backend
+    echo "AegisX stopped."
+    ;;
+  restart)
+    "$0" stop
+    "$0" start
+    ;;
+  status)
+    for x in backend worker frontend; do
+      file="$PIDDIR/$x.pid"
+      if [[ -f "$file" ]] && kill -0 "$(cat "$file")" 2>/dev/null; then echo "$x: RUNNING (PID $(cat "$file"))"; else echo "$x: STOPPED"; fi
+    done
+    ;;
+  logs)
+    tail -n 100 "$LOGDIR/backend.log" "$LOGDIR/worker.log" "$LOGDIR/frontend.log" 2>/dev/null || true
+    ;;
+  doctor)
+    echo "== AegisX Doctor =="
+    command -v python3 >/dev/null && python3 --version || echo "python3: MISSING"
+    command -v node >/dev/null && node --version || echo "node: MISSING"
+    command -v npm >/dev/null && npm --version || echo "npm: MISSING"
+    echo "DATABASE_URL=${DATABASE_URL:-unset}"
+    echo "AEGISX_QUEUE_BACKEND=${AEGISX_QUEUE_BACKEND:-memory}"
+    echo "AEGISX_UI_MODE=${AEGISX_UI_MODE:-auto}"
+    ;;
+  *)
+    echo "Usage: $0 {install|start|stop|restart|status|logs|doctor}"
+    exit 1
+    ;;
+esac

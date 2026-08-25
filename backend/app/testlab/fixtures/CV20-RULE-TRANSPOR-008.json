@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-TRANSPOR-008",
+  "title": "Coverage fixture for RULE-TRANSPOR-008",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-TRANSPOR-008"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-transpor-008",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-TRANSPOR-008": true
+    }
+  },
+  "negative": false
+}

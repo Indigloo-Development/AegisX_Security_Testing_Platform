@@ -1,0 +1,23 @@
+{
+  "fixture_id": "CV20-WEB-CORS-002",
+  "title": "Coverage fixture for WEB-CORS-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CORS-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-cors-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "access-control-allow-origin": "*",
+      "access-control-allow-credentials": "true"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

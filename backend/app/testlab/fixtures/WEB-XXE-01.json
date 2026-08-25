@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-XXE-01",
+  "title": "External entity processing fixture 1",
+  "category": "Web/XML",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-XXE-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "external_entity_processing": true
+    },
+    "url": "https://lab.local/web-xxe/1"
+  },
+  "negative": false
+}

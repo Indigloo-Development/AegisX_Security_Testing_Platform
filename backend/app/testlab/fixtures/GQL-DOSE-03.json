@@ -1,0 +1,17 @@
+{
+  "fixture_id": "GQL-DOSE-03",
+  "title": "GraphQL cost unbounded fixture 3",
+  "category": "GraphQL/DoS",
+  "protocol": "api",
+  "expected_rules": [
+    "GQL-DOSE-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "query_cost_unbounded": true
+    },
+    "url": "https://lab.local/gql-dose/3"
+  },
+  "negative": false
+}

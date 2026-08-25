@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-SESSION-003",
+  "title": "Coverage fixture for RULE-SESSION--003",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-SESSION--003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-session--003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-SESSION--003": true
+    }
+  },
+  "negative": false
+}

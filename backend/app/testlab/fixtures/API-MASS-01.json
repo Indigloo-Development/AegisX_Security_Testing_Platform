@@ -1,0 +1,17 @@
+{
+  "fixture_id": "API-MASS-01",
+  "title": "Mass assignment fixture 1",
+  "category": "API/Data",
+  "protocol": "api",
+  "expected_rules": [
+    "API-BOPLA-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "mass_assignment_observed": true
+    },
+    "url": "https://lab.local/api-mass/1"
+  },
+  "negative": false
+}

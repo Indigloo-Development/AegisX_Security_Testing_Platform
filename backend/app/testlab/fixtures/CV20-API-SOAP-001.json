@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-SOAP-001",
+  "title": "Coverage fixture for API-SOAP-001",
+  "category": "coverage-v20",
+  "protocol": "soap",
+  "expected_rules": [
+    "API-SOAP-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-soap-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-SOAP-001": true
+    },
+    "protocol": "soap"
+  },
+  "negative": false
+}

@@ -1,0 +1,9 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: aegisx-scanner-worker
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: aegisx-scanner-worker

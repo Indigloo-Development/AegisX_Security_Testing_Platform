@@ -1,0 +1,17 @@
+{
+  "fixture_id": "CORS-01",
+  "title": "CORS wildcard fixture 1",
+  "category": "Web/CORS",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CORS-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "headers": {
+      "access-control-allow-origin": "*"
+    },
+    "metadata": {}
+  },
+  "negative": false
+}

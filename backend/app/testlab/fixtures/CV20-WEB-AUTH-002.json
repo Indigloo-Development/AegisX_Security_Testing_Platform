@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-AUTH-002",
+  "title": "Coverage fixture for WEB-AUTH-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-AUTH-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/login",
+    "method": "POST",
+    "status_code": 401,
+    "headers": {},
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-AUTHORIZ-004",
+  "title": "Coverage fixture for RULE-AUTHORIZ-004",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-AUTHORIZ-004"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-authoriz-004",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-AUTHORIZ-004": true
+    }
+  },
+  "negative": false
+}

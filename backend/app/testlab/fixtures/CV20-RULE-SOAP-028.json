@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-SOAP-028",
+  "title": "Coverage fixture for RULE-SOAP-028",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-SOAP-028"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-soap-028",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-SOAP-028": true
+    }
+  },
+  "negative": false
+}

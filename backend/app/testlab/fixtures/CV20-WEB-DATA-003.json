@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-DATA-003",
+  "title": "Coverage fixture for WEB-DATA-003",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-DATA-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-data-003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "ssn=123-45-6789 credit_card=4111111111111111",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

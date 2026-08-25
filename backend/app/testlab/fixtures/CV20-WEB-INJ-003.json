@@ -1,0 +1,20 @@
+{
+  "fixture_id": "CV20-WEB-INJ-003",
+  "title": "Coverage fixture for WEB-INJ-003",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-INJ-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-inj-003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "SQL syntax error near SELECT",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

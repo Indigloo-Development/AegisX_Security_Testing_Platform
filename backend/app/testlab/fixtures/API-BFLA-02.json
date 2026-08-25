@@ -1,0 +1,17 @@
+{
+  "fixture_id": "API-BFLA-02",
+  "title": "Function mismatch fixture 2",
+  "category": "API/AuthZ",
+  "protocol": "api",
+  "expected_rules": [
+    "API-BFLA-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "function_access_mismatch": true
+    },
+    "url": "https://lab.local/api-bfla/2"
+  },
+  "negative": false
+}

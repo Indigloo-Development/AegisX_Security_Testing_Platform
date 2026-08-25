@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-SCA-SBOM-001",
+  "title": "Coverage fixture for SCA-SBOM-001",
+  "category": "coverage-v20",
+  "protocol": "sca",
+  "expected_rules": [
+    "SCA-SBOM-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/sca-sbom-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:SCA-SBOM-001": true
+    },
+    "protocol": "sca"
+  },
+  "negative": false
+}

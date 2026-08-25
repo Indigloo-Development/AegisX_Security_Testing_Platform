@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-CONFIGUR-005",
+  "title": "Coverage fixture for RULE-CONFIGUR-005",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-CONFIGUR-005"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-configur-005",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-CONFIGUR-005": true
+    }
+  },
+  "negative": false
+}

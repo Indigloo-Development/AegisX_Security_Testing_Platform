@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-AUTHZ-002",
+  "title": "Coverage fixture for API-AUTHZ-002",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-AUTHZ-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-authz-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-AUTHZ-002": true
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

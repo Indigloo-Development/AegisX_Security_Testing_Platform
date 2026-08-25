@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-GQL-001",
+  "title": "Coverage fixture for API-GQL-001",
+  "category": "coverage-v20",
+  "protocol": "graphql",
+  "expected_rules": [
+    "API-GQL-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-gql-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-GQL-001": true
+    },
+    "protocol": "graphql"
+  },
+  "negative": false
+}

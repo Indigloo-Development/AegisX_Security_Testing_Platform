@@ -1,0 +1,17 @@
+{
+  "fixture_id": "SOAP-SEC-03",
+  "title": "SOAP parser hardening fixture 3",
+  "category": "SOAP/XML",
+  "protocol": "api",
+  "expected_rules": [
+    "SOAP-SEC-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "ws_security_missing": true
+    },
+    "url": "https://lab.local/soap-sec/3"
+  },
+  "negative": false
+}

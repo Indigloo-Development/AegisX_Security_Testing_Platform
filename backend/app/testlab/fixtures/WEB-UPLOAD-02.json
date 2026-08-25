@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-UPLOAD-02",
+  "title": "Executable upload path fixture 2",
+  "category": "Web/Files",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-UPLOAD-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "upload_path_executable": true
+    },
+    "url": "https://lab.local/web-upload/2"
+  },
+  "negative": false
+}

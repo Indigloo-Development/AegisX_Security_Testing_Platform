@@ -1,0 +1,13 @@
+{
+  "case_id": "PROTO-16",
+  "category": "regression",
+  "inputs": {
+    "graphql_depth_limit": 7,
+    "soap_schema_validation": true,
+    "grpc_auth_required": true,
+    "web_https": true
+  },
+  "expected": {
+    "must_not_confirm": ["GQL-005", "GQL-006", "SOAP-002", "GRPC-001", "GRPC-005"]
+  }
+}

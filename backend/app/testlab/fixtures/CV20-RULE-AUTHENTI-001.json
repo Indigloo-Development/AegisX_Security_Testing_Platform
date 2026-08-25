@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-AUTHENTI-001",
+  "title": "Coverage fixture for RULE-AUTHENTI-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-AUTHENTI-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-authenti-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-AUTHENTI-001": true
+    }
+  },
+  "negative": false
+}

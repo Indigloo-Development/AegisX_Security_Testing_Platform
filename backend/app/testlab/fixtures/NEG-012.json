@@ -1,0 +1,22 @@
+{
+  "fixture_id": "NEG-012",
+  "title": "Clean negative fixture 12",
+  "category": "Negative/FalsePositive",
+  "protocol": "web",
+  "expected_rules": [],
+  "forbidden_rules": [
+    "WEB-SQL-001",
+    "WEB-SSRF-001",
+    "WEB-CMD-001",
+    "WEB-XSS-001"
+  ],
+  "context": {
+    "url": "https://clean.local/12",
+    "headers": {
+      "content-security-policy": "default-src 'self'; object-src 'none'"
+    },
+    "body": "normal application response",
+    "metadata": {}
+  },
+  "negative": true
+}

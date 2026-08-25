@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-RAG-SECU-032",
+  "title": "Coverage fixture for RULE-RAG-SECU-032",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-RAG-SECU-032"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-rag-secu-032",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-RAG-SECU-032": true
+    }
+  },
+  "negative": false
+}

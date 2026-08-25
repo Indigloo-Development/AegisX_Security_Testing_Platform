@@ -1,0 +1,17 @@
+{
+  "fixture_id": "GQL-AUTH-02",
+  "title": "GraphQL resolver auth missing fixture 2",
+  "category": "GraphQL/AuthZ",
+  "protocol": "api",
+  "expected_rules": [
+    "GQL-AUTH-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "resolver_auth_missing": true
+    },
+    "url": "https://lab.local/gql-auth/2"
+  },
+  "negative": false
+}

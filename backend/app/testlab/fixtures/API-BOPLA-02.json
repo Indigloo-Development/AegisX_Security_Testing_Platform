@@ -1,0 +1,17 @@
+{
+  "fixture_id": "API-BOPLA-02",
+  "title": "Sensitive field exposure fixture 2",
+  "category": "API/Data",
+  "protocol": "api",
+  "expected_rules": [
+    "API-BOPLA-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "sensitive_field_overexposed": true
+    },
+    "url": "https://lab.local/api-bopla/2"
+  },
+  "negative": false
+}

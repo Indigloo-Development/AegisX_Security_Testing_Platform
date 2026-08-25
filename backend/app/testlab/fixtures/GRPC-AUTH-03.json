@@ -1,0 +1,17 @@
+{
+  "fixture_id": "GRPC-AUTH-03",
+  "title": "gRPC method auth missing fixture 3",
+  "category": "gRPC/AuthZ",
+  "protocol": "api",
+  "expected_rules": [
+    "GRPC-AUTH-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "grpc_method_auth_missing": true
+    },
+    "url": "https://lab.local/grpc-auth/3"
+  },
+  "negative": false
+}

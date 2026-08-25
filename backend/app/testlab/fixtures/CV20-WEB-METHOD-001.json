@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-WEB-METHOD-001",
+  "title": "Coverage fixture for WEB-METHOD-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-METHOD-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-method-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "allow": "GET, POST, TRACE"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

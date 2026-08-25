@@ -1,0 +1,27 @@
+{
+  "fixture_id": "CV20-WEB-REDIR-001",
+  "title": "Coverage fixture for WEB-REDIR-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-REDIR-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-redir-001",
+    "method": "GET",
+    "status_code": 302,
+    "headers": {
+      "location": "https://evil.example"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web",
+    "parameters": [
+      {
+        "name": "redirect"
+      }
+    ]
+  },
+  "negative": false
+}

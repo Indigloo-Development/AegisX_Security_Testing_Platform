@@ -1,0 +1,27 @@
+{
+  "fixture_id": "CV20-WEB-INJ-001",
+  "title": "Coverage fixture for WEB-INJ-001",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-INJ-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-inj-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "AegisXReflection controlled canary reflected",
+    "metadata": {
+      "xss_reflection": true
+    },
+    "protocol": "web",
+    "parameters": [
+      {
+        "name": "q"
+      }
+    ]
+  },
+  "negative": false
+}

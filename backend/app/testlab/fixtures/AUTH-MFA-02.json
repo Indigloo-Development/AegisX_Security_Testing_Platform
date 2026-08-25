@@ -1,0 +1,17 @@
+{
+  "fixture_id": "AUTH-MFA-02",
+  "title": "MFA missing fixture 2",
+  "category": "Auth/MFA",
+  "protocol": "web",
+  "expected_rules": [
+    "AUTH-MFA-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "mfa_not_required": true
+    },
+    "url": "https://lab.local/auth-mfa/2"
+  },
+  "negative": false
+}

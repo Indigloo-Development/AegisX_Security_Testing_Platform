@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-SSRF-04",
+  "title": "SSRF candidate fixture 4",
+  "category": "Web/SSRF",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-SSRF-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "ssrf_candidate": true
+    },
+    "url": "https://lab.local/web-ssrf/4"
+  },
+  "negative": false
+}

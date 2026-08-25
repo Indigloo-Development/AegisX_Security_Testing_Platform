@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-API-025",
+  "title": "Coverage fixture for RULE-API-025",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-API-025"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-api-025",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-API-025": true
+    }
+  },
+  "negative": false
+}

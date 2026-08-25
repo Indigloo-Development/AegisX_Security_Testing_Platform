@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-PATH-03",
+  "title": "Path traversal error fixture 3",
+  "category": "Web/Files",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-PATH-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "path_traversal_error_indicator": true
+    },
+    "url": "https://lab.local/web-path/3"
+  },
+  "negative": false
+}

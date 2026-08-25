@@ -1,0 +1,17 @@
+{
+  "fixture_id": "API-RATE-04",
+  "title": "Rate limit bypass fixture 4",
+  "category": "API/Abuse",
+  "protocol": "api",
+  "expected_rules": [
+    "API-RATE-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "rate_limit_bypass_observed": true
+    },
+    "url": "https://lab.local/api-rate/4"
+  },
+  "negative": false
+}

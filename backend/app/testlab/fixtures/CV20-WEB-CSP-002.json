@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-WEB-CSP-002",
+  "title": "Coverage fixture for WEB-CSP-002",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CSP-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/web-csp-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {
+      "content-security-policy": "default-src 'self'; script-src 'unsafe-inline'"
+    },
+    "body": "",
+    "metadata": {},
+    "protocol": "web"
+  },
+  "negative": false
+}

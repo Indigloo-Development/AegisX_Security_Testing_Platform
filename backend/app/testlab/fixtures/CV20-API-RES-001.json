@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-API-RES-001",
+  "title": "Coverage fixture for API-RES-001",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-RES-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-res-001",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:API-RES-001": true
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

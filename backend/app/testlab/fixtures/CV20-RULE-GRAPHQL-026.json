@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-GRAPHQL-026",
+  "title": "Coverage fixture for RULE-GRAPHQL-026",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-GRAPHQL-026"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-graphql-026",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-GRAPHQL-026": true
+    }
+  },
+  "negative": false
+}

@@ -1,0 +1,22 @@
+{
+  "fixture_id": "CV20-SCA-DEP-002",
+  "title": "Coverage fixture for SCA-DEP-002",
+  "category": "coverage-v20",
+  "protocol": "sca",
+  "expected_rules": [
+    "SCA-DEP-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/sca-dep-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:SCA-DEP-002": true
+    },
+    "protocol": "sca"
+  },
+  "negative": false
+}

@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-CMD-03",
+  "title": "Command error fixture 3",
+  "category": "Web/Injection",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-CMD-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "command_error_indicator": true
+    },
+    "url": "https://lab.local/web-cmd/3"
+  },
+  "negative": false
+}

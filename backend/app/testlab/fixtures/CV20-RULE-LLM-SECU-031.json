@@ -1,0 +1,21 @@
+{
+  "fixture_id": "CV20-RULE-LLM-SECU-031",
+  "title": "Coverage fixture for RULE-LLM-SECU-031",
+  "category": "coverage-v20",
+  "protocol": "web",
+  "expected_rules": [
+    "RULE-LLM-SECU-031"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/rule-llm-secu-031",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "rule:RULE-LLM-SECU-031": true
+    }
+  },
+  "negative": false
+}

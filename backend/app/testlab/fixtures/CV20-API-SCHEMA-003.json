@@ -1,0 +1,24 @@
+{
+  "fixture_id": "CV20-API-SCHEMA-003",
+  "title": "Coverage fixture for API-SCHEMA-003",
+  "category": "coverage-v20",
+  "protocol": "api",
+  "expected_rules": [
+    "API-SCHEMA-003"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/api-schema-003",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "request_body_schema": "unconstrained",
+      "integer_max": null,
+      "string_pattern": null
+    },
+    "protocol": "api"
+  },
+  "negative": false
+}

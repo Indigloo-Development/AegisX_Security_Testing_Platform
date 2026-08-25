@@ -1,0 +1,30 @@
+{
+  "fixture_id": "CV20-AI-AGENT-002",
+  "title": "Coverage fixture for AI-AGENT-002",
+  "category": "coverage-v20",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-AGENT-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "url": "https://lab.local/coverage/ai-agent-002",
+    "method": "GET",
+    "status_code": 200,
+    "headers": {},
+    "body": "",
+    "metadata": {
+      "prompt_injection_success": true,
+      "system_prompt_disclosed": true,
+      "sensitive_data_disclosed": true,
+      "unsafe_output_executable": true,
+      "document_injection_observed": true,
+      "cross_tenant_retrieval": true,
+      "tool_privilege_excessive": true,
+      "memory_poisoning_observed": true,
+      "mcp_server_untrusted_transport": true
+    },
+    "protocol": "ai"
+  },
+  "negative": false
+}

@@ -1,0 +1,18 @@
+{
+  "fixture_id": "AGENT-03",
+  "title": "Agent boundary fixture 3",
+  "category": "AI/Agent",
+  "protocol": "ai",
+  "expected_rules": [
+    "AI-AGENT-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "agent_boundary": true,
+      "tool_privilege_excessive": true
+    },
+    "url": "https://lab.local/agent/3"
+  },
+  "negative": false
+}

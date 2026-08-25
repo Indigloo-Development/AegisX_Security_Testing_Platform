@@ -1,0 +1,17 @@
+{
+  "fixture_id": "API-TENANT-04",
+  "title": "Cross tenant read fixture 4",
+  "category": "API/AuthZ",
+  "protocol": "api",
+  "expected_rules": [
+    "API-BOLA-002"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "cross_tenant_object_read": true
+    },
+    "url": "https://lab.local/api-tenant/4"
+  },
+  "negative": false
+}

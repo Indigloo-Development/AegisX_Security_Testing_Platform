@@ -1,0 +1,17 @@
+{
+  "fixture_id": "WEB-SQL-01",
+  "title": "SQL error fixture 1",
+  "category": "Web/Injection",
+  "protocol": "web",
+  "expected_rules": [
+    "WEB-SQL-001"
+  ],
+  "forbidden_rules": [],
+  "context": {
+    "metadata": {
+      "sql_error_indicator": true
+    },
+    "url": "https://lab.local/web-sql/1"
+  },
+  "negative": false
+}
